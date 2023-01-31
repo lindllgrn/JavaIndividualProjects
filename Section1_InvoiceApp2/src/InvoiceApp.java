@@ -108,7 +108,6 @@ public class InvoiceApp {
 		System.out.println("Goodbye");
 		System.out.println();
 		System.out.println("==========================================");
-
 		
 		sc.close();
     } //end of main
