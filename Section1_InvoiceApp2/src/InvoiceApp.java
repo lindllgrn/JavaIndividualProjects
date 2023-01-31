@@ -15,7 +15,7 @@ public class InvoiceApp {
         
         double invoiceTotal = 0.0;
         double discountTotal = 0.0;
-        double subotal = 0.0;
+        double subtotal = 0.0;
         double discountPercent = 0.0;
         double discountAmount = 0.0;
         double discountInvoiceTotal = 0.0;
