@@ -28,23 +28,27 @@ public class InvoiceApp {
         // welcome the user to the program
 		System.out.println(); //print blank line
 		System.out.println("==========================================");
-        System.out.println("Welcome to the Invoice Total Calculator V4");
+        System.out.println("Welcome to the Invoice Total Calculator V5");
 		System.out.println("==========================================");
 
         // perform invoice calculations until choice is "n" or "N"
         while (!choice.equalsIgnoreCase("n")) {
         	
-        	 // get the invoice line items from the user
+        	// get the invoice line items from the user
         	System.out.println();
-            System.out.print("Enter the number of invoice line itmes:   ");
+            System.out.print("Enter the number of invoice line items: ");
             lineItems = sc.nextInt();
             
             System.out.println();
     		System.out.println("==========================================");
+            System.out.println();
 
-        	for (int i = 1; i <= lineItems; i++) {       		
+            //user enters the invoice amounts
+        	for (int i = 1; i <= lineItems; i++) {   
                 System.out.print("Enter the #" + i + " line item amount:   ");
                 subtotal += sc.nextDouble();
+                
+    			System.out.println();
         	}
         	
     		System.out.println("==========================================");
@@ -66,35 +70,45 @@ public class InvoiceApp {
             invoiceTotal = invoiceTotal + discountInvoiceTotal;
             discountTotal = discountTotal + discountAmount;
             invoiceCount = invoiceCount + 1;  
-            // display the discount amount and total
-			
-            System.out.printf("%20s: %,10\n", "Line items", lineItems);
-			/* better way look at assignment details
-            String message = "Discount percent: " + discountPercent + "\n"
-                           + "Discount amount:  " + discountAmount + "\n"
-                           + "Invoice total:    " + discountInvoiceTotal + "\n";            
-            System.out.println(message);
-			*/
+            
+			System.out.println();
+            
+			//displays the user's proper numbers according to the input data
+            System.out.printf("%20s: %,10.2f\n", "Discount percent", discountPercent);
+            System.out.printf("%20s: %,10.2f\n", "Discount amount", discountAmount);
+            System.out.printf("%20s: %,10.2f\n", "Invoice total", discountInvoiceTotal);
+            
+            System.out.println();
+			System.out.println("==========================================");
 			
 			choice = sc.nextLine(); //clear the return char still in the input buffer
+			
+			System.out.println();
+			
+			//displays the user's proper numbers according to the input data
+	        System.out.printf("%20s: %,10d\n", "Numer of invoices", invoiceCount);
+	        System.out.printf("%20s: %,10.2f\n", "Average invoice", invoiceTotal / invoiceCount);
+	        System.out.printf("%20s: %,10.2f\n", "Average discount", discountTotal / invoiceCount);
 
-            // see if the user wants to continue
 			System.out.println();
 			System.out.println("==========================================");
+			System.out.println();
+
+			//asks the user if they would like to continue
             System.out.print("Continue? (y/n): ");
-    		System.out.println("==========================================");
+            
             choice = sc.nextLine();
+            
             System.out.println();
         }
         
-        System.out.printf("%20s: %,10.2f\n", "Subtotal", subtotal);
-		/* better way look at assignment details
-        // calculate and display invoice count, average invoice, and average discount
-        String message = "Number of invoices: " + invoiceCount + "\n"
-                       + "Average invoice:    " + invoiceTotal / invoiceCount + "\n"
-                       + "Average discount:   " + discountTotal / invoiceCount + "\n";
-        System.out.println(message);
-		*/
+        //sends a goodbye message to the user when they are finished using the program
+		System.out.println("==========================================");
+		System.out.println();
+		System.out.println("Goodbye");
+		System.out.println();
+		System.out.println("==========================================");
+
 		
 		sc.close();
     } //end of main
