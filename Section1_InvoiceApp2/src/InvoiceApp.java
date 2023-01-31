@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class InvoiceApp {
     public static void main(String[] args) {
-    	 // initialize variables for use in calculating averages
+    	// initialize variables for use in calculating averages
         int invoiceCount = 0;
         int lineItems = 0;
         
@@ -86,7 +86,7 @@ public class InvoiceApp {
 			System.out.println();
 			
 			//displays the user's proper numbers according to the input data
-	        System.out.printf("%20s: %,10d\n", "Numer of invoices", invoiceCount);
+	        System.out.printf("%20s: %,10d\n", "Numer of invoices", lineItems);
 	        System.out.printf("%20s: %,10.2f\n", "Average invoice", invoiceTotal / invoiceCount);
 	        System.out.printf("%20s: %,10.2f\n", "Average discount", discountTotal / invoiceCount);
 
