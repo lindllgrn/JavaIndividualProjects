@@ -30,27 +30,25 @@ public class InvoiceApp {
 		System.out.println("==========================================");
         System.out.println("Welcome to the Invoice Total Calculator V4");
 		System.out.println("==========================================");
-        System.out.println();  // print a blank line
 
         // perform invoice calculations until choice is "n" or "N"
         while (!choice.equalsIgnoreCase("n")) {
         	
         	 // get the invoice line items from the user
         	System.out.println();
-    		System.out.println("==========================================");
             System.out.print("Enter the number of invoice line itmes:   ");
-    		System.out.println("==========================================");
             lineItems = sc.nextInt();
-        	
-        	for (int i = 1; i <= lineItems; i++) {
-        		System.out.println();
-        		System.out.println("==========================================");
+            
+            System.out.println();
+    		System.out.println("==========================================");
+
+        	for (int i = 1; i <= lineItems; i++) {       		
                 System.out.print("Enter the #" + i + " line item amount:   ");
-        		System.out.println("==========================================");
-        		System.out.println();
                 subtotal += sc.nextDouble();
         	}
         	
+    		System.out.println("==========================================");
+  	
         	// calculate the discount amount and total
             if (subtotal >= 500) {
                 discountPercent = 0.25;
@@ -70,7 +68,7 @@ public class InvoiceApp {
             invoiceCount = invoiceCount + 1;  
             // display the discount amount and total
 			
-            System.out.printf("%20s:,10\n", "Line items", numLineItems);
+            System.out.printf("%20s: %,10\n", "Line items", lineItems);
 			/* better way look at assignment details
             String message = "Discount percent: " + discountPercent + "\n"
                            + "Discount amount:  " + discountAmount + "\n"
