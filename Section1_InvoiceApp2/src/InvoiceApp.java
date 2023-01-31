@@ -28,7 +28,7 @@ public class InvoiceApp {
         // welcome the user to the program
 		System.out.println(); //print blank line
 		System.out.println("==========================================");
-        System.out.println("Welcome to the Invoice Total Calculator V3");
+        System.out.println("Welcome to the Invoice Total Calculator V4");
 		System.out.println("==========================================");
         System.out.println();  // print a blank line
 
