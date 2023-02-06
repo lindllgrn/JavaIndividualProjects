@@ -85,7 +85,7 @@ public class InvoiceApp {
 			
 			System.out.println();
 			
-			//displays the user's proper numbers according to the input data
+			/*displays the user's proper numbers according to the input data
 	        System.out.printf("%20s: %,10d\n", "Numer of invoices", lineItems);
 	        System.out.printf("%20s: %,10.2f\n", "Average invoice", invoiceTotal / invoiceCount);
 	        System.out.printf("%20s: %,10.2f\n", "Average discount", discountTotal / invoiceCount);
@@ -93,6 +93,7 @@ public class InvoiceApp {
 			System.out.println();
 			System.out.println("==========================================");
 			System.out.println();
+			*/
 
 			//asks the user if they would like to continue
             System.out.print("Continue? (y/n): ");
@@ -101,7 +102,11 @@ public class InvoiceApp {
             
             System.out.println();
         }
-        
+		System.out.println("==========================================");
+        System.out.printf("%20s: %,10d\n", "Numer of invoices", lineItems);
+        System.out.printf("%20s: %,10.2f\n", "Average invoice", invoiceTotal / invoiceCount);
+        System.out.printf("%20s: %,10.2f\n", "Average discount", discountTotal / invoiceCount);
+		
         //sends a goodbye message to the user when they are finished using the program
 		System.out.println("==========================================");
 		System.out.println();
