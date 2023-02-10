@@ -2,14 +2,14 @@
 public class Account {
 
 	// this is a class level field - share across all accounts
-	public static int lastNumber = 0;
+	private static int lastNumber = 0;
 
 	// instance level fields - unique per account
 	// a field can also be called attribute or property
-	public int number;
-	public String firstName;
-	public String lastName;
-	public double balance;
+	private int number;
+	private String firstName;
+	private String lastName;
+	private double balance;
 
 	// default constructor that will return a unique account object 
 	public Account() {
@@ -33,4 +33,42 @@ public class Account {
 		this.balance = balance;
 	} // end of overload constructor
 
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public static void setLastNumber(int lastNumber) {
+		Account.lastNumber = lastNumber;
+	}
+
+	
+	
 } // end of Account class
