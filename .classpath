@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Section1_InvoiceApp2/src"/>
+	<classpathentry kind="src" path="Section2_BankApp/src"/>
+	<classpathentry kind="output" path="Section1_InvoiceApp2/bin"/>
+</classpath>
