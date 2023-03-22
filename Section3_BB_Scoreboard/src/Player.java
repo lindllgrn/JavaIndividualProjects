@@ -109,7 +109,7 @@ public class Player {
 	public void displayStats() {
 		//display the player's jersey number, name, 
 		//# of fouls, and # of pints via getPoints method
-		System.out.println(this.jersey + );
+		System.out.println(getJersey() + " " + getName() + " " + getFouls() + " " + getPoints());
 	}
 	public boolean equals(Object object) {
 		if(!(object instanceof Player))

@@ -14,15 +14,16 @@ public class Team {
 	}
 	
 	public Team(String name) {
-		//add something here
+		
 	}
 	
 	public String getName() {
-		
+		return this.name;
 	}
 	
 	public void setName(String name) {
 		//set the teams name 
+		this.name = name;
 	}
 	
 	public void addPlayer(String name, int jersey) throws Exception {
@@ -48,9 +49,10 @@ public class Team {
 
 	public int getTeamPoints() {
 		//get the total number of points for the
-		//entire team by galling the Player.getPoints
+		//entire team by calling the Player.getPoints
 		//method
 		//return team points
+
 	}
 	
 	public int getTeamFouls() {
@@ -62,7 +64,7 @@ public class Team {
 	
 	public void displayTeamStats() {
 		//display the team's summary
-		//stats usnig the Team.getTeamFouls
+		//stats using the Team.getTeamFouls
 		//and getTeamPoints methods
 	}
 	
