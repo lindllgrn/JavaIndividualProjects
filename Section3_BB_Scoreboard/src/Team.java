@@ -13,6 +13,18 @@ public class Team {
 		
 	}
 	
+	public Team(String name) {
+		//add something here
+	}
+	
+	public String getName() {
+		
+	}
+	
+	public void setName(String name) {
+		//set the teams name 
+	}
+	
 	public void addPlayer(String name, int jersey) throws Exception {
 		
 		Player duplicate = this.getPlayer(jersey);
@@ -34,6 +46,26 @@ public class Team {
 		}
 	}
 
+	public int getTeamPoints() {
+		//get the total number of points for the
+		//entire team by galling the Player.getPoints
+		//method
+		//return team points
+	}
+	
+	public int getTeamFouls() {
+		//get the total number of fouls for the 
+		//entire team using the Player.getFouls
+		//method
+		//return the total number of fouls for the team
+	}
+	
+	public void displayTeamStats() {
+		//display the team's summary
+		//stats usnig the Team.getTeamFouls
+		//and getTeamPoints methods
+	}
+	
 	public void displayDetailStats() {
 		
 		for (int i = 0; i < players.size(); i++) {
