@@ -39,9 +39,9 @@ public class Team {
 		}
 	}
 
-	public Player getPlayer(int jersey) {
+	public Player getPlayer(int jersey) throws Exception{
 
-		int index = this.players.indexOf(jersey);
+		int index = this.players.indexOf(new Player (jersey));
 		if (index == -1) {
 			return null;
 		} else {
@@ -77,6 +77,8 @@ public class Team {
 	public void displayDetailStats() {
 
 		//where the header should be 
+		System.out.println("Jersey" + " Name" + "    Fouls " + "1pt 2pt 3pt   Total");
+		System.out.println("====== =============    ===== === === ===   ====");
 		
 		for (int i = 0; i < players.size(); i++) {
 
@@ -88,7 +90,7 @@ public class Team {
 			int fg3 = players.get(i).getFieldGoals_3pt();
 
 			//make printf
-			System.out.println("#" + jersey + " " + name);
+			System.out.printf(" %2i %13s   %2i %2i %2i %2i\n", jersey, name, fouls, fg1, fg2, fg3);
 		}
 	}
 
