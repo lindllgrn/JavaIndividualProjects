@@ -13,7 +13,7 @@ public class Team {
 
 	}
 
-	public Team(String name) {
+	public Team(String name)throws Exception {
 		this();
 		this.setName(name);
 	}
@@ -33,7 +33,7 @@ public class Team {
 		Player duplicate = this.getPlayer(jersey);
 		if (duplicate == null) {
 			this.players.add(new Player(name, jersey));
-		}else {
+		} else {
 			String duplicateName = duplicate.getName();
 			throw new Exception("Jersey #" + jersey + " already assigned to " + duplicateName + "!");
 		}
@@ -51,30 +51,43 @@ public class Team {
 
 	public int getTeamPoints() {
 
-		Player teamPoints = new Player();
-
-		return teamPoints.getPoints();
+		int teamPoints = 0;
+		
+		for (int i = 0; i < players.size(); i++) {
+			teamPoints += this.players.get(i).getPoints();
+		}
+		return teamPoints;
 	}
 
 	public int getTeamFouls() {
 
-		Player teamFouls = new Player();
-
-		return teamFouls.getFouls();
+		int teamFouls = 0;
+		
+		for (int i = 0; i < players.size(); i++) {
+			teamFouls += this.players.get(i).getFouls();
+		}
+		return teamFouls;
 	}
 
 	public void displayTeamStats() {
 
-		System.out.println(this.getTeamFouls() + " " + this.getTeamPoints());
+		System.out.println("Team " + this.name + " Fouls = " + this.getTeamFouls() + " Points = " + this.getTeamPoints());
 	}
 
 	public void displayDetailStats() {
 
+		//where the header should be 
+		
 		for (int i = 0; i < players.size(); i++) {
 
-			int jersey = players.get(i).getJersey();
 			String name = players.get(i).getName();
+			int jersey = players.get(i).getJersey();
+			int fouls = players.get(i).getFouls();
+			int fg1 = players.get(i).getFieldGoals_1pt();
+			int fg2 = players.get(i).getFieldGoals_2pt();
+			int fg3 = players.get(i).getFieldGoals_3pt();
 
+			//make printf
 			System.out.println("#" + jersey + " " + name);
 		}
 	}

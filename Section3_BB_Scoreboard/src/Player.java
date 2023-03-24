@@ -24,12 +24,9 @@ public class Player {
 	
 	public Player(int jersey) throws Exception{
 		this();
-		try {
-			this.setJersey(jersey);
-		} catch (Exception e) {
-			throw e;
-		}
+		this.setJersey(jersey);
 	}
+	
 	public void setJersey(int jersey) throws Exception{
 		if (jersey >= 1 && jersey <= 99)
 			this.jersey = jersey;
@@ -39,13 +36,9 @@ public class Player {
 	
 	public Player(String name, int jersey) throws Exception{
 		this();
-		try {
-			this.setName(name);
-			this.setJersey(jersey);
-		}catch (Exception e) {
-			throw e;
-		}
-		}
+		this.setName(name);
+		this.setJersey(jersey);
+	}
 			
 	public String getName() {
 		return this.name;
@@ -92,12 +85,6 @@ public class Player {
 		case 3:
 			fieldGoals_3pt++;
 		default: System.out.println("Invalid choice");
-		try {
-			//add something here
-		} catch (Exception e) {
-			throw e;
-		}
-		}
 	}
 	
 	public int getPoints() {
