@@ -85,6 +85,7 @@ public class Player {
 		case 3:
 			fieldGoals_3pt++;
 		default: System.out.println("Invalid choice");
+		}
 	}
 	
 	public int getPoints() {
