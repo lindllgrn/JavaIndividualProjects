@@ -10,7 +10,6 @@ public class Team {
 
 		this.name = "unknown";
 		this.players = new ArrayList<Player>();
-
 	}
 
 	public Team(String name)throws Exception {
