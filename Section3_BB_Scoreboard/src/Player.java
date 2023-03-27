@@ -27,17 +27,17 @@ public class Player {
 		this.setJersey(jersey);
 	}
 	
+	public Player(String name, int jersey) throws Exception{
+		this();
+		this.setName(name);
+		this.setJersey(jersey);
+	}
+	
 	public void setJersey(int jersey) throws Exception{
 		if (jersey >= 1 && jersey <= 99)
 			this.jersey = jersey;
 		else 
 			throw new Exception("Invalid jersey number #" + jersey + "!");
-	}
-	
-	public Player(String name, int jersey) throws Exception{
-		this();
-		this.setName(name);
-		this.setJersey(jersey);
 	}
 			
 	public String getName() {
@@ -76,15 +76,13 @@ public class Player {
 		//increment the appropriate field goal type, using a switch
 		//that also handles invalid data
 		switch (shotType) {
-		case 0:
-			break;
 		case 1:
 			fieldGoals_1pt++;
 		case 2:
 			fieldGoals_2pt++;
 		case 3:
 			fieldGoals_3pt++;
-		default: System.out.println("Invalid choice");
+		default: throw new Exception ("Invalid choice!");
 		}
 	}
 	
@@ -97,8 +95,9 @@ public class Player {
 	public void displayStats() {
 		//display the player's jersey number, name, 
 		//# of fouls, and # of pints via getPoints method
-		System.out.println(getJersey() + " " + getName() + " " + getFouls() + " " + getPoints());
+		System.out.println("Jersey # = " + getJersey() + " Name = " + getName() + " Fouls = " + getFouls() + " Points = " + getPoints());
 	}
+	
 	public boolean equals(Object object) {
 		if(!(object instanceof Player))
 			return false;
