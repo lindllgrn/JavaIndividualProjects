@@ -135,7 +135,7 @@ public class Team {
 	 */
 	public void displayDetailStats() {
 
-		System.out.println("Jersey" + " Name" + "    Fouls " + "1pt 2pt 3pt   Total");
+		System.out.println("Jersey" + " Name" + "           Fouls " + "1pt 2pt 3pt   Total");
 		System.out.println("====== =============    ===== === === ===   ====");
 		
 		for (int i = 0; i < players.size(); i++) {
@@ -147,7 +147,7 @@ public class Team {
 			int fg2 = players.get(i).getFieldGoals_2pt();
 			int fg3 = players.get(i).getFieldGoals_3pt();
 
-			System.out.printf(" %2i %13s   %2i %2i %2i %2i\n", jersey, name, fouls, fg1, fg2, fg3);
+			System.out.printf(" %2d %25s   %2d %2d %2d %2d\n", jersey, name, fouls, fg1, fg2, fg3);
 		}
 	}
 

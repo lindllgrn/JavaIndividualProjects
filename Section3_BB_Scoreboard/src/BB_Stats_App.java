@@ -208,7 +208,7 @@ public class BB_Stats_App {
 		System.out.println();
 		
 		System.out.println(SINGLE_LINE);
-		System.out.println("Enter #" + player.getJersey() + " " +player.getName() + " Stats");
+		System.out.println("Enter #" + player.getJersey() + " " + player.getName() + " Stats");
 		System.out.println(SINGLE_LINE);
 		
 		System.out.println("0 = foul");
@@ -272,7 +272,7 @@ public class BB_Stats_App {
 			app.playGame();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			System.out.println("Sorry but this program ended with an error. Please contact Princess Debbie!");
+			System.out.println("Sorry but this program ended with an error. Please contact Lindsay Green!");
 		}
 		
 		Input.sc.close();
