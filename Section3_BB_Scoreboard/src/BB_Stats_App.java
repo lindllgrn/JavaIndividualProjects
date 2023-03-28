@@ -1,8 +1,8 @@
 /**
  * Basketball Stats Application
  * 
- * @author dljohnson1234
- * @since 2022.02.15
+ * @author lindllgrn
+ * @since 2023.03.28
  * @version 1.0 beta
  */
 public class BB_Stats_App {
@@ -76,6 +76,7 @@ public class BB_Stats_App {
      * @param team The team to setup players for
      */
     private void setupPlayers(Team team) {
+    	
     	String teamName = team.getName();
     	String name = null;
     	int jersey = 0;
@@ -200,6 +201,7 @@ public class BB_Stats_App {
      * @param player The player to enter stats for
      */
     private void updatePlayerStats(Player player) {
+    	
     	int type = 0;
     	int made = 0;
     	
