@@ -4,6 +4,8 @@
  * @author lindllgrn
  * @since 2023.03.28
  * @version 1.0 beta
+ * 
+ * GitHub URL: https://github.com/lindllgrn/JavaIndividualProjects/tree/main/Section3_BB_Scoreboard
  */
 public class Player {
 	

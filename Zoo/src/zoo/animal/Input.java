@@ -1,3 +1,5 @@
+package zoo.animal;
+
 import java.util.Scanner;
 
 /**
