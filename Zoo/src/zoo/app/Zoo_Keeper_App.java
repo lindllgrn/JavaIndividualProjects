@@ -22,7 +22,7 @@ public class Zoo_Keeper_App {
 	public Zoo_Keeper_App() {
 		zoo = new Zoo();
 	}
-   /*
+  /*
    * https://fsymbols.com/bubble/
    */
 	private void displayHeader() {
