@@ -12,7 +12,7 @@ import zoo.animal.*;
 public class Zoo_Keeper_App {
 
 	private Water water;
-	
+
 	private float weight;
 
 	private String name;
@@ -132,25 +132,25 @@ public class Zoo_Keeper_App {
 
 			this.birthdate = (LocalDate) birthdate;
 
-		}//else {
+		}else {
 
-		//throw new Exception("Invalid date MM-dd-yyyy: " + birthdate);
+		throw new Exception("Invalid date MM-dd-yyyy: " + birthdate);
 	}
-	
+	}
+
 	public <T> void setWater(T water) throws Exception{
-		
+
 		System.out.println("Please enter the type of water they live in (fresh or salt): ");
 		Scanner sc = new Scanner(System.in);
-				
+
 		if (water instanceof String) {
-			
-		String s = (String) water;
-		
-		sc.nextLine();
-		
-		s = s.toLowerCase();
-		;
-		
+
+			String s = (String) water;
+
+			sc.nextLine();
+
+			s = s.toLowerCase();
+
 			switch(s) {
 			case "f":
 			case "fresh":
@@ -170,7 +170,7 @@ public class Zoo_Keeper_App {
 			throw new Exception("invalid water: " + water);
 		}
 	}
-	
+
 	public void setWeight(float weight) throws Exception {
 		Scanner sc = new Scanner(System.in);
 
