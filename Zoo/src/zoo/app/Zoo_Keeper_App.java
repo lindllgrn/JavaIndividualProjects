@@ -15,7 +15,11 @@ public class Zoo_Keeper_App {
 
 	private float weight;
 
+	private Gender gender;
+
 	private String name;
+
+	private float wingspan;
 
 	private static Scanner sc;
 
@@ -24,9 +28,7 @@ public class Zoo_Keeper_App {
 	private LocalDate birthdate;
 
 	private List<Animal> animals;
-	/* 8
-	 * https://fsymbols.com/bubble/
-	 */
+
 	private void displayHeader() {
 		System.out.println("\r\n"
 				+ "███╗░░░███╗██╗░░░██╗     ███████╗░█████╗░░█████╗░\r\n"
@@ -70,7 +72,7 @@ public class Zoo_Keeper_App {
 	}
 
 	public void zooName() throws Exception {
-		String userInput = null;
+		String userInput = " ";
 
 		System.out.println();
 
@@ -80,12 +82,27 @@ public class Zoo_Keeper_App {
 		System.out.println();
 	}
 
-	public void addAnimal(String name) {
+	public void addGuppy() {
 
-		this.animals.add(null);
+		this.animals.add(new Guppy());
+	}
+	
+	public void addFlyingFish() {
+
+		this.animals.add(new FlyingFish());
+	}
+	
+	public void addChicken() {
+
+		this.animals.add(new Chicken());
+	}
+	
+	public void addSparrow() {
+
+		this.animals.add(new Sparrow());
 	}
 
-	public void birdChoices(String name) throws Exception {
+	public void birdChoices() throws Exception {
 
 		boolean birdChoices = true;
 		int userInput = 0;
@@ -98,21 +115,29 @@ public class Zoo_Keeper_App {
 			System.out.println("What type of Bird would you like to add?:");
 			System.out.println("0 = Chicken");
 			System.out.println("1 = Sparrow");
+			System.out.println("e = Main Menu");
 
 			userInput = Input.getIntRange("Menu Choice: ", 0, 2);
 
 			switch (userInput) {
 			case 0:
-				this.addAnimal(name);
-				this.setBirthdate(null);
-				this.setWeight(userInput);
+				this.setGender("male");
+				this.addChicken();
+				this.setBirthdate(birthdate);
+				this.setWeight(weight);
+				this.setWingspan(wingspan);
 				System.out.println();
 				break;
 			case 1:
-				this.addAnimal(name);
-				this.setBirthdate(null);
-				this.setWeight(userInput);
+				this.setGender("male");
+				this.addSparrow();
+				this.setBirthdate(birthdate);
+				this.setWeight(weight);
+				this.setWingspan(wingspan);
 				System.out.println();
+				break;
+			case 2:
+				this.createZoo();
 				break;
 
 			default:
@@ -121,42 +146,73 @@ public class Zoo_Keeper_App {
 		}
 	}
 
-	public <T> void setBirthdate(T birthdate) throws Exception {
-		Scanner sc = new Scanner(System.in);
+	public <T> void setGender(T gender)throws Exception {
 
 		System.out.println();
 		System.out.println(DOUBLE_LINE);
-		System.out.println("Please enter birthdate (MM-dd-yyyy):");
+		System.out.println("Please enter the type of gender of the animal you picked: ");
 
-		String userInput = sc.nextLine();
+		Scanner sc = new Scanner(System.in);
 
-		if (birthdate instanceof String) {
+		String s = sc.nextLine();
 
-			userInput = (String) birthdate;
-			this.birthdate = LocalDate.parse(userInput, Zoo_Keeper_App.FORMAT);
+		if (gender instanceof String) {
 
-		} else if (birthdate instanceof LocalDate){
+			s = (String) gender;
 
-			this.birthdate = (LocalDate) birthdate;
+			s = s.toLowerCase();
 
-		}else{
-
-			throw new Exception("Invalid date MM-dd-yyyy: " + birthdate);
+			switch(s) {
+			case "f":
+			case "female":
+				this.gender = Gender.FEMALE;
+				break;
+			case "m":
+			case "male":
+				this.gender = Gender.MALE;
+				break;
+			default:
+				this.gender = Gender.UNKNOWN;
+			}
+		}else if (gender instanceof Gender) {
+			Gender g = (Gender) gender;
+			this.gender = g;
+		}else if (gender == null) {
+			throw new IllegalArgumentException("Invalid gender: null");
+		}else {
+			throw new Exception("invalid gender: " + gender);
 		}
 	}
 
+	public void setBirthdate(LocalDate birthdate) throws Exception{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Please enter the birthdate (MM-dd-yyyy): ");
+
+		String input = sc.nextLine();
+
+		LocalDate birthdate1 = LocalDate.parse(input, FORMAT);
+
+		if (!input.matches("\\d{2}-\\d{2}-\\d{4}")) {
+			throw new Exception("Invalid date format. Please enter date in MM-dd-yyyy format.");
+		}
+
+		this.birthdate = birthdate1;
+	}
+
 	public <T> void setWater(T water) throws Exception{
-		
-System.out.println();
+
+		System.out.println();
 		System.out.println(DOUBLE_LINE);
 		System.out.println("Please enter the type of water they live in (fresh or salt): ");
+
 		Scanner sc = new Scanner(System.in);
+
+		String s = sc.nextLine();
 
 		if (water instanceof String) {
 
-			String s = (String) water;
-
-			sc.nextLine();
+			s = (String) water;
 
 			s = s.toLowerCase();
 
@@ -175,6 +231,8 @@ System.out.println();
 		}else if (water instanceof Water) {
 			Water w = (Water) water;
 			this.water = w;
+		}else if(water == null) {
+			throw new IllegalArgumentException("Invalid water: null");
 		}else {
 			throw new Exception("invalid water: " + water);
 		}
@@ -189,13 +247,13 @@ System.out.println();
 
 		float userInput = sc.nextFloat();
 
-		if (weight > 0)
-			this.weight = weight;
+		if (userInput > 0)
+			this.weight = userInput;
 		else
-			throw new Exception("Invalid weight: " + weight);
+			throw new Exception("Invalid weight: " + userInput);
 	}
 
-	public void fishChoices(String name) throws Exception {
+	public void fishChoices() throws Exception {
 		boolean fishChoices = true;
 		int userInput = 0;
 
@@ -207,23 +265,29 @@ System.out.println();
 			System.out.println("What type of Fish would you like to add?:");
 			System.out.println("0 = Guppy");
 			System.out.println("1 = Flying Fish");
+			System.out.println("2 = Main Menu");
 
 			userInput = Input.getIntRange("Menu Choice: ", 0, 2);
 
 			switch (userInput) {
 			case 0:
-				this.addAnimal(name);
-				this.setBirthdate(null);
-				this.setWeight(userInput);
-				this.setWater(null);
+				this.setGender("male");
+				this.addGuppy();
+				this.setBirthdate(birthdate);
+				this.setWeight(weight);
+				this.setWater("fresh");
 				System.out.println();
 				break;
 			case 1:
-				this.addAnimal(name);
-				this.setBirthdate(null);
-				this.setWeight(userInput);
-				this.setWater(null);
+				this.setGender("male");
+				this.addFlyingFish();
+				this.setBirthdate(birthdate);
+				this.setWeight(weight);
+				this.setWater("fresh");
 				System.out.println();
+				break;
+			case 2:
+				this.createZoo();
 				break;
 
 			default:
@@ -245,19 +309,40 @@ System.out.println();
 			System.out.println("Would you like to add a type of Fish or Bird?:");
 			System.out.println("0 = Fish");
 			System.out.println("1 = Bird");
+			System.out.println("2 = Main Menu");
 
-			userInput = Input.getIntRange("Menu Choice: ", 0, 1);
+			userInput = Input.getIntRange("Menu Choice: ", 0, 2);
 
 			switch (userInput) {
 			case 0:
-				this.fishChoices(name);
+				this.fishChoices();
 				break;
 			case 1:
-				this.birdChoices(name);
+				this.birdChoices();
+				break;
+			case 2:
+				this.createZoo();
 				break;
 			default:
 				System.out.println("Invalid menu choice = " + userInput);
 			}
+		}
+	}
+
+	public void setWingspan(float wingspan) throws Exception{
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println();
+		System.out.println(DOUBLE_LINE);
+		System.out.println("Please enter the wingspan in cm: ");
+
+		float userInput = sc.nextFloat();
+
+		if(userInput > 0) {
+			this.wingspan = userInput;
+		}else{
+			throw new Exception ("invalid wingspan: " + userInput);
 		}
 	}
 
@@ -280,11 +365,9 @@ System.out.println();
 
 			System.out.println("0 = End Game");
 			System.out.println("1 = Enter " + this.getName() + " Zoo Animals");
-			//System.out.println("3 = Display Zoo Stats");
 
 			userInput = Input.getIntRange("Menu Choice: ", 0, 2);
 
-			//ask about this
 			switch (userInput) {
 			case 0:
 				createZoo = false;
@@ -311,100 +394,10 @@ System.out.println();
 
 			app.zooName();
 			app.createZoo();
-			//app.updateZoo();
-
-			/*
-			Animal a1 = new Animal();
-			Animal a2 = new Animal("12-31-2022", (float) 10.5);
-
-			LocalDate birthdate = LocalDate.parse("11-30-2022", FORMAT);
-			Animal a3 = new Animal(birthdate, (float) 5.5);
-
-			System.out.println(a1);
-			System.out.println(a2);
-			System.out.println(a3);
-
-
-			System.out.println();
-
-			System.out.println(a1.getBirthdateStr() + " " + a1.getWeight());
-			System.out.println(a2.getBirthdateStr() + " " + a2.getWeight());
-			System.out.println(a3.getBirthdateStr() + " " + a3.getWeight());
-
-
-			Bird b1 = new Bird();
-			Bird b2 = new Bird("12-31-2022", (float) 1.5);
-			Bird b3 = new Bird("12-31-2022", (float) 1.5, (float) 2.0);
-
-
-			System.out.println(b1);
-			System.out.println(b2);
-			System.out.println(b3.getWingspan());
-
-
-			Sparrow s1 = new Sparrow();
-			Sparrow s2 = new Sparrow("12-31-2022", (float) 1.5);
-			Sparrow s3 = new Sparrow("12-31-2022", (float) 1.5, (float) 2.0);
-
-			System.out.println(s1);
-			System.out.println(s2);
-			System.out.println(s3.getWingspan());
-
-
-			Chicken c1 = new Chicken();
-			Chicken c2 = new Chicken("12-31-2022", (float) 1.5);
-			Chicken c3 = new Chicken("12-31-2022", (float) 1.5, (float) 2.0);
-
-			System.out.println(c1);
-			System.out.println(c2);
-			System.out.println(c3.getWingspan());
-
-
-			Fish f1 = new Fish();
-			Fish f2 = new Fish("12-31-2022", (float) 1.5);
-			Fish f3 = new Fish("12-31-2022", (float) 1.5, "salt");
-
-			System.out.println(f1);
-			System.out.println(f2);
-			System.out.println(f3.getWater());
-
-
-			Guppy g1 = new Guppy();
-			Guppy g2 = new Guppy("12-31-2022", (float) 1.5);
-			Guppy g3 = new Guppy("12-31-2022", (float) 1.5, "salt");
-
-			System.out.println(g1);
-			System.out.println(g2);
-			System.out.println(g3.getWater());
-
-			FlyingFish ff1 = new FlyingFish();
-			FlyingFish ff2 = new FlyingFish("12-31-2022", (float) 1.5);
-			FlyingFish ff3 = new FlyingFish("12-31-2022", (float) 1.5, "salt");
-
-			System.out.println(ff1);
-			System.out.println(ff2);
-			System.out.println(ff3.getWater());
-
-			//Zoo_Keeper_App.animals.add(a1);
-			//Zoo_Keeper_App.animals.add(b1);
-			Zoo_Keeper_App.animals.add(s1);
-			Zoo_Keeper_App.animals.add(c1);
-			//Zoo_Keeper_App.animals.add(f1);
-			Zoo_Keeper_App.animals.add(g1);
-			Zoo_Keeper_App.animals.add(ff1);
-
-			FlyingFish myFish = (FlyingFish) Zoo_Keeper_App.animals.get(2);
-			System.out.println(myFish.getWater());
-
-			myFish.soar();
-			myFish.fly();
-			 */
 
 		} catch (Exception e) {
 			System.out.println("The following error has occurred: ");
 			System.out.println(e.getMessage());
-
 		}
 	}
-
 }

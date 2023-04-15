@@ -96,7 +96,7 @@ public abstract class Animal {
 		if (birthdate instanceof String) {
 			
 			String date = (String) birthdate;
-		    this.birthdate = LocalDate.parse(date, Animal.FORMAT);;
+		    this.birthdate = LocalDate.parse(date, Animal.FORMAT);
 		    
 		} else if (birthdate instanceof LocalDate){
 			
