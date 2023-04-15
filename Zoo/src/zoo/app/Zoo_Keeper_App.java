@@ -87,38 +87,45 @@ public class Zoo_Keeper_App {
 
 	public void birdChoices(String name) throws Exception {
 
+		boolean birdChoices = true;
 		int userInput = 0;
 
+		System.out.println();
 		System.out.println(DOUBLE_LINE);
 
-		System.out.println("What type of Bird would you like to add?:");
-		System.out.println("0 = Chicken");
-		System.out.println("1 = Sparrow");
+		while(birdChoices) {
 
-		userInput = Input.getIntRange("Menu Choice: ", 0, 2);
+			System.out.println("What type of Bird would you like to add?:");
+			System.out.println("0 = Chicken");
+			System.out.println("1 = Sparrow");
 
-		switch (userInput) {
-		case 0:
-			this.addAnimal(name);
-			this.setBirthdate(null);
-			this.setWeight(userInput);
-			System.out.println();
-			break;
-		case 1:
-			this.addAnimal(name);
-			this.setBirthdate(null);
-			this.setWeight(userInput);
-			System.out.println();
-			break;
+			userInput = Input.getIntRange("Menu Choice: ", 0, 2);
 
-		default:
-			System.out.println("Invalid menu choice = " + userInput);
+			switch (userInput) {
+			case 0:
+				this.addAnimal(name);
+				this.setBirthdate(null);
+				this.setWeight(userInput);
+				System.out.println();
+				break;
+			case 1:
+				this.addAnimal(name);
+				this.setBirthdate(null);
+				this.setWeight(userInput);
+				System.out.println();
+				break;
+
+			default:
+				System.out.println("Invalid menu choice = " + userInput);
+			}
 		}
 	}
 
 	public <T> void setBirthdate(T birthdate) throws Exception {
 		Scanner sc = new Scanner(System.in);
 
+		System.out.println();
+		System.out.println(DOUBLE_LINE);
 		System.out.println("Please enter birthdate (MM-dd-yyyy):");
 
 		String userInput = sc.nextLine();
@@ -132,14 +139,16 @@ public class Zoo_Keeper_App {
 
 			this.birthdate = (LocalDate) birthdate;
 
-		}else {
+		}else{
 
-		throw new Exception("Invalid date MM-dd-yyyy: " + birthdate);
-	}
+			throw new Exception("Invalid date MM-dd-yyyy: " + birthdate);
+		}
 	}
 
 	public <T> void setWater(T water) throws Exception{
-
+		
+System.out.println();
+		System.out.println(DOUBLE_LINE);
 		System.out.println("Please enter the type of water they live in (fresh or salt): ");
 		Scanner sc = new Scanner(System.in);
 
@@ -174,6 +183,8 @@ public class Zoo_Keeper_App {
 	public void setWeight(float weight) throws Exception {
 		Scanner sc = new Scanner(System.in);
 
+		System.out.println();
+		System.out.println(DOUBLE_LINE);
 		System.out.println("Please enter the weight in lbs: ");
 
 		float userInput = sc.nextFloat();
@@ -185,58 +196,68 @@ public class Zoo_Keeper_App {
 	}
 
 	public void fishChoices(String name) throws Exception {
+		boolean fishChoices = true;
 		int userInput = 0;
 
+		System.out.println();
 		System.out.println(DOUBLE_LINE);
 
-		System.out.println("What type of Fish would you like to add?:");
-		System.out.println("0 = Guppy");
-		System.out.println("1 = Flying Fish");
+		while(fishChoices) {
 
-		userInput = Input.getIntRange("Menu Choice: ", 0, 2);
+			System.out.println("What type of Fish would you like to add?:");
+			System.out.println("0 = Guppy");
+			System.out.println("1 = Flying Fish");
 
-		switch (userInput) {
-		case 0:
-			this.addAnimal(name);
-			this.setBirthdate(null);
-			this.setWeight(userInput);
-			this.setWater(null);
-			System.out.println();
-			break;
-		case 1:
-			this.addAnimal(name);
-			this.setBirthdate(null);
-			this.setWeight(userInput);
-			this.setWater(null);
-			System.out.println();
-			break;
+			userInput = Input.getIntRange("Menu Choice: ", 0, 2);
 
-		default:
-			System.out.println("Invalid menu choice = " + userInput);
+			switch (userInput) {
+			case 0:
+				this.addAnimal(name);
+				this.setBirthdate(null);
+				this.setWeight(userInput);
+				this.setWater(null);
+				System.out.println();
+				break;
+			case 1:
+				this.addAnimal(name);
+				this.setBirthdate(null);
+				this.setWeight(userInput);
+				this.setWater(null);
+				System.out.println();
+				break;
+
+			default:
+				System.out.println("Invalid menu choice = " + userInput);
+			}
 		}
 	}
 
 	public void updateZoo() throws Exception {
 
+		boolean updateZoo = true;
 		int userInput = 0;
 
+		System.out.println();
 		System.out.println(DOUBLE_LINE);
 
-		System.out.println("Would you like to add a type of Fish or Bird?:");
-		System.out.println("0 = Fish");
-		System.out.println("1 = Bird");
+		while (updateZoo) {
 
-		userInput = Input.getIntRange("Menu Choice: ", 0, 1);
+			System.out.println("Would you like to add a type of Fish or Bird?:");
+			System.out.println("0 = Fish");
+			System.out.println("1 = Bird");
 
-		switch (userInput) {
-		case 0:
-			this.fishChoices(name);
-			break;
-		case 1:
-			this.birdChoices(name);
-			break;
-		default:
-			System.out.println("Invalid menu choice = " + userInput);
+			userInput = Input.getIntRange("Menu Choice: ", 0, 1);
+
+			switch (userInput) {
+			case 0:
+				this.fishChoices(name);
+				break;
+			case 1:
+				this.birdChoices(name);
+				break;
+			default:
+				System.out.println("Invalid menu choice = " + userInput);
+			}
 		}
 	}
 
@@ -252,6 +273,7 @@ public class Zoo_Keeper_App {
 
 		while (createZoo) {
 
+			System.out.println();
 			System.out.println(DOUBLE_LINE);
 
 			System.out.println("Main Menu");
