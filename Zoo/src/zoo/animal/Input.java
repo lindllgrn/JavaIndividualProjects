@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * Handles all user's input with validation
  * 
- * @author dejohns2
- * @since 2023.03.19
+ * @author winniedehpoe
+ * @since 2023.04.07
  * @version 1.0 beta
  * 
  * GitHub URL: https://github.com/lindllgrn/JavaIndividualProjects/tree/main/Section3_BB_Scoreboard
