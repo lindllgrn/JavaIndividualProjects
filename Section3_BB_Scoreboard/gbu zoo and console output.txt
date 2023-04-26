@@ -1,0 +1,207 @@
+g,b,u zoo_keeper_app
+honestly, I LOVED this assignment! I really wanted to challenge myself and I think I
+did a fairly good job with it. I was thinking it was going to be our last assignment of the year
+so I was going all out on it. I can't wait to do even more with the next assignment coming up!
+
+console output:
+
+███╗░░░███╗██╗░░░██╗     ███████╗░█████╗░░█████╗░
+████╗░████║╚██╗░██╔╝     ╚════██║██╔══██╗██╔══██╗
+██╔████╔██║░╚████╔╝░     ░░███╔═╝██║░░██║██║░░██║
+██║╚██╔╝██║░░╚██╔╝░░     ██╔══╝░░██║░░██║██║░░██║
+██║░╚═╝░██║░░░██║░░░     ███████╗╚█████╔╝╚█████╔╝
+╚═╝░░░░░╚═╝░░░╚═╝░░░     ╚══════╝░╚════╝░░╚════╝░ ฅʕ•ᴥ•ฅʔ 
+
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+██████╗██████╗██████╗██████╗██████╗██████╗██████╗██████╗
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+What would you like your zoo to be called?:  Lin's
+
+-----------------------------------------
+ Lin's Zoo Started!
+-----------------------------------------
+
+=========================================
+Main Menu
+0 = End Game
+1 = Enter  Lin's Zoo Animals
+2 = Display Animals
+Menu Choice: 1
+
+=========================================
+Would you like to add a type of Fish or Bird?:
+0 = Fish
+1 = Bird
+2 = Main Menu
+Menu Choice: 0
+
+=========================================
+What type of Fish would you like to add?:
+0 = Guppy
+1 = Flying Fish
+2 = Main Menu
+3 = Bird Choices
+4 = End Game
+Menu Choice: 1
+
+=========================================
+Please enter the type of gender of the animal you picked: 
+male
+
+=========================================
+Please enter the birthdate (MM-dd-yyyy): 
+12-22-2023
+
+=========================================
+Please enter the weight in lbs: 
+8.9
+
+=========================================
+Please enter the type of water they live in (fresh or salt): 
+fresh
+
+What type of Fish would you like to add?:
+0 = Guppy
+1 = Flying Fish
+2 = Main Menu
+3 = Bird Choices
+4 = End Game
+Menu Choice: 0
+
+=========================================
+Please enter the type of gender of the animal you picked: 
+female
+
+=========================================
+Please enter the birthdate (MM-dd-yyyy): 
+03-19-2000
+
+=========================================
+Please enter the weight in lbs: 
+2
+
+=========================================
+Please enter the type of water they live in (fresh or salt): 
+fresh
+
+What type of Fish would you like to add?:
+0 = Guppy
+1 = Flying Fish
+2 = Main Menu
+3 = Bird Choices
+4 = End Game
+Menu Choice: 3
+
+=========================================
+What type of Bird would you like to add?:
+0 = Chicken
+1 = Sparrow
+2 = Main Menu
+3 = Fish Choices
+4 = End Game
+Menu Choice: 0
+
+=========================================
+Please enter the type of gender of the animal you picked: 
+male
+
+=========================================
+Please enter the birthdate (MM-dd-yyyy): 
+05-26-2007
+
+=========================================
+Please enter the weight in lbs: 
+5.6
+
+=========================================
+Please enter the wingspan in cm: 
+7.8
+
+What type of Bird would you like to add?:
+0 = Chicken
+1 = Sparrow
+2 = Main Menu
+3 = Fish Choices
+4 = End Game
+Menu Choice: 11
+Invalid input! Please enter a number between (0 - 4): 1
+
+=========================================
+Please enter the type of gender of the animal you picked: 
+female
+
+=========================================
+Please enter the birthdate (MM-dd-yyyy): 
+12-19-2001
+
+=========================================
+Please enter the weight in lbs: 
+1
+
+=========================================
+Please enter the wingspan in cm: 
+2
+
+What type of Bird would you like to add?:
+0 = Chicken
+1 = Sparrow
+2 = Main Menu
+3 = Fish Choices
+4 = End Game
+Menu Choice: 2
+
+=========================================
+Main Menu
+0 = End Game
+1 = Enter  Lin's Zoo Animals
+2 = Display Animals
+Menu Choice: 2
+
+
+1) Birthdate  Gender Weight ID Type 
+  ========== ====== ====== == ============= 
+  12-22-2023   MALE 8.90   1 flying fish
+-----------------------------------------
+What this animal does or is doing:
+-----------------------------------------
+This flying fish can fly.
+This flying fish can drift.
+This flying fish can propel.
+This flying fish can soar.
+This flying fish is eating
+
+2) Birthdate  Gender Weight ID Type 
+  ========== ====== ====== == ============= 
+  03-19-2000 FEMALE 2.00         2 guppy
+-----------------------------------------
+What this animal does or is doing:
+-----------------------------------------
+This guppy can propel.
+This guppy can drift.
+This guppy is eating.
+
+3) Birthdate  Gender Weight ID Type 
+  ========== ====== ====== == ============= 
+  05-26-2007   MALE 5.60       3 chicken
+-----------------------------------------
+What this animal does or is doing:
+-----------------------------------------
+This chicken is eating.
+
+4) Birthdate  Gender Weight ID Type 
+  ========== ====== ====== == ============= 
+  12-19-2001 FEMALE 1.00       4 sparrow
+-----------------------------------------
+What this animal does or is doing:
+-----------------------------------------
+This sparrow can glide.
+This sparrow can soar.
+This sparrow is eating.
+
+=========================================
+Main Menu
+0 = End Game
+1 = Enter  Lin's Zoo Animals
+2 = Display Animals
+Menu Choice: 0
