@@ -16,7 +16,6 @@ import zoo.animal.*;
  * @author lindllgrn
  * @since 2023.04.07
  * @version 1.0 beta
- * 
  * GitHub URL: https://github.com/lindllgrn/JavaIndividualProjects/tree/main/Zoo
  */
 
